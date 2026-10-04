@@ -14,7 +14,18 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="no-scroll">
+    <!-- صفحة الترحيب الأوليّة -->
+    <div id="welcome-overlay" class="welcome-overlay">
+        <div class="welcome-circle" onclick="enterInvitation()">
+            <div class="welcome-text">
+                <h2>آل السيلاوي</h2>
+                <span>&</span>
+                <h2>آل سلام</h2>
+            </div>
+            <p class="click-hint">اضغط للدخول إلى الدعوة</p>
+        </div>
+    </div>
     <div class="wedding">
         <div class="slide-1">
             <div class="video">
@@ -214,6 +225,22 @@
     crossorigin="anonymous"></script>
 <!-- Firebase SDKs -->
 <script>
+    function enterInvitation() {
+        const welcomeOverlay = document.getElementById('welcome-overlay');
+        if (welcomeOverlay) {
+            // إخفاء شاشة الترحيب
+            welcomeOverlay.classList.add('fade-out');
+
+            // إزالة قفل التمرير والسماح بالـ Scroll داخل الدعوة
+            document.body.classList.remove('no-scroll');
+
+            // تشغيل فيديو الخلفية تلقائياً
+            const video = document.querySelector('.slide-1 video');
+            if (video) {
+                video.play().catch(err => console.log(err));
+            }
+        }
+    }
     // تحديد التاريخ المستهدف (10 أكتوبر من السنة الحالية أو القادمة)
     const targetDate = new Date("October 10, 2026 00:00:00").getTime();
 
@@ -316,6 +343,7 @@
             '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
         })[m]);
     }
+
 </script>
 
 </html>
