@@ -325,3 +325,75 @@ iframe{
         transform: translateY(0);
     }
 }
+
+.wishes-container {
+    background: #f6f6f569; /* نفس لون البطاقات السابقة */
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.wishes-title {
+    color: #4a422c;
+    margin-bottom: 5px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.wishes-subtitle {
+    color: #7a7058;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.wishes-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: #f5f2e66e;
+    border: 1px solid #d4cfbe;
+    border-radius: 10px;
+    color: #4a422c;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4a422c;
+    box-shadow: 0 0 5px rgba(74, 66, 44, 0.2);
+    background: #fff;
+}
+
+/* تنسيق زر الإرسال */
+.submit-btn {
+    background-color: #4a422c;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #363020;
+    transform: translateY(-2px);
+}
+
+.slide-7{
+        text-align: center;
+    padding: 20px;
+}

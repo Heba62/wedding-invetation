@@ -172,6 +172,41 @@
                 </div>
             </div>
         </div>
+        <div class="slide-6">
+            <div class="contain">
+                <div class="wishes-container">
+                    <h3 class="wishes-title">كلمة للعروسين</h3>
+                    <p class="wishes-subtitle">شاركنا بأمنية أو رسالة مباركة</p>
+
+                    <!-- تم إضافة id="msgForm" للنموذج -->
+                    <form class="wishes-form" id="msgForm">
+                        <div class="form-group">
+                            <!-- تم إضافة id="guestName" -->
+                            <input type="text" id="guestName" placeholder="اسم الضيف الكريم" required>
+                        </div>
+                        <div class="form-group">
+                            <!-- تم إضافة id="guestText" -->
+                            <textarea id="guestText" placeholder="اكتب مباركتك أو أمنيتك هنا..." rows="4"
+                                required></textarea>
+                        </div>
+                        <!-- تم إضافة id="submitBtn" -->
+                        <button type="submit" class="submit-btn" id="submitBtn">إرسال الأمنية</button>
+                    </form>
+
+                    <!-- المكان الذي ستظهر فيه التهاني للضيوف -->
+                    <div id="wishesList" class="wishes-list"></div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-7">
+            <hr>
+            <p>ال السيلاوي & ال سلام
+                <br>
+                10.10.2026
+                <br>
+                ❤
+            </p>
+        </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
