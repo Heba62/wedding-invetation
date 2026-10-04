@@ -1,101 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    direction: rtl;
+    font-family: "Aref Ruqaa", serif;
+    background-color: #f4f1ea;
+}
+
 .wedding {
-  background: url('https://base44.app/api/apps/6966e1f30fa9fbe508239391/files/public/6966e1f30fa9fbe508239391/8c4a39e0c_2.jpg');
-  font-family: "Aref Ruqaa", serif;
-  /* padding: 0 31%; */
+    background: url('https://base44.app/api/apps/6966e1f30fa9fbe508239391/files/public/6966e1f30fa9fbe508239391/8c4a39e0c_2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Aref Ruqaa", serif;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-/* الحاوية الرئيسية للشريحة */
+
+/* الشريحة الأولى */
 .slide-1 {
-  text-align: center;
-  position: relative;
-  width: 100%;
-  height: 100vh; /* يملأ ارتفاع الشاشة بالكامل */
-  overflow: hidden;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* حاوية الفيديو */
 .slide-1 .video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* تنسيق الفيديو ليغطي المساحة بشكل متناسق ومضبوط على الموبايل */
 .slide-1 .video video {
-  /* width: 100%; */
-  height: 100%;
-  object-fit: cover; /* يضمن إن الفيديو يعبي المكان بدون ما يتشوه أو ينمط */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 46%); /* تعتيم أسود شفاف بنسبة 30% */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.46);
 }
 
 .content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  flex-direction: column;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-direction: column;
 }
 
 .familyName {
-  font-size: 39px;
-  padding: 20px;
+    font-size: 36px;
+    padding: 15px;
+    font-weight: bold;
 }
 
 .timeWedding {
-  font-size: 13px;
-  display: flex;
-  gap: 30px;
+    font-size: 16px;
+    display: flex;
+    gap: 30px;
 }
 
 .icon {
-  padding: 6px;
+    padding: 6px;
+    font-size: 20px;
 }
 
+/* الحاويات العامة */
 .contain {
-  text-align: center;
-  margin: 90px;
-  background: rgba(255, 255, 255, 0.6);
-  padding: 54px 50px 10px;
-  font-size: 18px;
-  border-radius: 30px;
-}
-/* 
-.contain div{
-    padding: 10px 0;
-} */
-
-iframe{
-        border-radius: 31px;
+    text-align: center;
+    margin: 40px 20px;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 30px 20px;
+    font-size: 18px;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+.contain div {
+    margin-bottom: 12px;
+}
 
-/* الحاوية الرئيسية للتقويم */
+iframe {
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+/* بطاقة التقويم */
 .calendar-card {
-    background: #fdfcf769; /* لون ورق خفيف */
+    background: #fdfcf7;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    font-family: "Aref Ruqaa", serif;/* خط فخم يناسب التصميم */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     text-align: center;
     position: relative;
-    margin: 50px auto;
+    margin: 30px auto;
+    max-width: 320px;
 }
 
-/* الجزء العلوي (الرأس) */
 .calendar-header {
-    background-color: #4a422c; /* لون بني غامق */
+    background-color: #4a422c;
     color: #fff;
     padding: 25px 20px 15px;
     position: relative;
@@ -104,7 +122,6 @@ iframe{
     align-items: flex-end;
 }
 
-/* الحلقات الصغيرة في الأعلى */
 .binder-rings {
     position: absolute;
     top: -1px;
@@ -119,7 +136,7 @@ iframe{
     height: 20px;
     background: #363020;
     border-radius: 4px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .calendar-header .day-name,
@@ -135,23 +152,18 @@ iframe{
     letter-spacing: 3px;
 }
 
-/* الجزء السفلي (جسم التقويم) */
 .calendar-body {
-    padding: 30px 20px;
+    padding: 25px 20px;
     color: #4a422c;
-    /* إذا بدك تحط خلفية الورقة المزخرفة أو رسمة النبتة اللي بالصورة، بتقدر تضيفها هون: */
-    /* background: url('رابط_صورة_الخلفية.jpg') no-repeat center / cover; */
 }
 
-/* رقم اليوم الكبير */
 .day-number {
-    font-size: 85px;
+    font-size: 75px;
     font-weight: bold;
     line-height: 1;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-/* خط فاصل صغير */
 .divider {
     width: 40px;
     height: 1px;
@@ -159,7 +171,6 @@ iframe{
     margin: 0 auto 15px;
 }
 
-/* تفاصيل يوم الأسبوع والوقت */
 .sub-date {
     font-size: 13px;
     letter-spacing: 2px;
@@ -167,19 +178,18 @@ iframe{
 }
 
 .time {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
+/* العد التنازلي */
 .countdown-container {
     text-align: center;
-    background: #fdfcf769;
-    color: rgba(74, 66, 44, 0.9);
+    background: #fdfcf7;
+    color: #4a422c;
     padding: 20px;
     border-radius: 15px;
-    font-family: "Aref Ruqaa", serif;
-    max-width: 400px;
+    max-width: 350px;
     margin: 20px auto;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
@@ -187,69 +197,55 @@ iframe{
 .countdown-container h3 {
     margin-bottom: 15px;
     font-size: 18px;
-    letter-spacing: 1px;
 }
 
 .countdown-timer {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .time-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255);
-    padding: 10px 15px;
+    background: rgba(74, 66, 44, 0.06);
+    padding: 10px;
     border-radius: 10px;
     min-width: 60px;
 }
 
 .time-box span {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .time-box .label {
     font-size: 12px;
     opacity: 0.8;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
-.count{
-    text-align: center;
-  margin: 20px;
-  /* background: white; */
-  padding: 54px 50px 10px;
-  font-size: 18px;
-  /* border-radius: 30px; */
-}
-
+/* الجدول الزمني */
 .timeline-container {
-    background: #fdfcf769; /* نفس لون ورق التقويم السابق */
+    background: #fdfcf7;
     padding: 30px 20px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    margin: 40px auto;
-    text-align: center;
-    direction: rtl;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
 }
 
 .timeline-title {
     color: #4a422c;
-    margin-bottom: 30px;
-    font-size: 20px;
-    letter-spacing: 1px;
+    margin-bottom: 25px;
+    font-size: 22px;
 }
 
-/* الحاوية التي تضم الخط والنقاط */
 .timeline {
     position: relative;
     padding: 10px 0;
 }
 
-/* الخط العمودي الرقيق في المنتصف */
 .timeline::before {
     content: '';
     position: absolute;
@@ -261,45 +257,31 @@ iframe{
     background-color: #d4cfbe;
 }
 
-/* عناصر الجدول الزمني */
 .timeline-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     width: 100%;
-    
-    /* تأثير الأنيميشن عند الظهور */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
 }
 
-/* تأخير ظهور كل عنصر عن الآخر لحركة أنيميشن متسلسلة */
-.timeline-item:nth-child(1) { animation-delay: 0.2s; }
-.timeline-item:nth-child(2) { animation-delay: 0.4s; }
-.timeline-item:nth-child(3) { animation-delay: 0.6s; }
-
-/* تنسيق الوقت (على اليسار أو اليمين حسب التنسيق) */
 .timeline-item .time {
-    width: 40%;
+    width: 42%;
     font-size: 14px;
     font-weight: bold;
     color: #4a422c;
     text-align: left;
 }
 
-/* تنسيق الحدث (الاسم) */
 .timeline-item .event-desc {
-    width: 40%;
+    width: 42%;
     font-size: 15px;
     font-weight: bold;
     color: #4a422c;
     text-align: right;
 }
 
-/* النقطة أو الدائرة في منتصف الخط */
 .timeline-item .point {
     position: absolute;
     left: 50%;
@@ -307,62 +289,49 @@ iframe{
     width: 14px;
     height: 14px;
     background-color: #4a422c;
-    border: 3px solid #fdfcf7; /* حافة بيضاء تعطي عزل أنيق عن الخط */
+    border: 3px solid #fdfcf7;
     border-radius: 50%;
     box-shadow: 0 0 0 2px rgba(74, 66, 44, 0.2);
-    transition: transform 0.3s ease;
 }
 
-/* حركة تفاعلية خفيفة عند وضع الماوس على النقطة */
-.timeline-item:hover .point {
-    transform: translateX(-50%) scale(1.3);
-}
-
-/* كود حركة الأنيميشن (Fade In & Slide Up) */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* قسم الرسائل والتهاني */
 .wishes-container {
-    background: #f6f6f569; /* نفس لون البطاقات السابقة */
-    padding: 30px 20px;
+    background: #fdfcf7;
+    padding: 25px 20px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    margin-bottom: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .wishes-title {
     color: #4a422c;
     margin-bottom: 5px;
-    font-size: 20px;
-    letter-spacing: 1px;
+    font-size: 22px;
 }
 
 .wishes-subtitle {
     color: #7a7058;
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
 .wishes-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 15px;
-    background: #f5f2e66e;
+    padding: 12px;
+    background: #fdfcf7;
     border: 1px solid #d4cfbe;
     border-radius: 10px;
     color: #4a422c;
     font-size: 14px;
+    font-family: inherit;
     outline: none;
     transition: all 0.3s ease;
 }
@@ -374,26 +343,58 @@ iframe{
     background: #fff;
 }
 
-/* تنسيق زر الإرسال */
 .submit-btn {
     background-color: #4a422c;
     color: #fff;
     padding: 12px;
     border: none;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    letter-spacing: 1px;
+    font-family: inherit;
+    transition: background 0.3s ease;
 }
 
 .submit-btn:hover {
     background-color: #363020;
-    transform: translateY(-2px);
 }
 
-.slide-7{
-        text-align: center;
+/* التهاني المعروضة */
+.wishes-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.wish-card {
+    background: #ffffff;
+    border: 1px solid #e8e4d8;
+    border-radius: 12px;
+    padding: 12px 15px;
+    text-align: right;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.wish-author {
+    color: #4a422c;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.wish-text {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.slide-7 {
+    text-align: center;
     padding: 20px;
+    color: #4a422c;
+    font-weight: bold;
 }
