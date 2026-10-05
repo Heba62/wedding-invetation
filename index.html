@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitation</title>
     <link rel="icon" type="image/png" href="./artuzorka-envelope-7076001_1920.png">
+    <meta property="og:title" content="Invitation" />
+    <!-- <meta property="og:description" content="وصف قصير للموقع أو الدعوة" /> -->
+    <meta property="og:image" content="https://touch-invetation.github.io/wedding-invitation/assets/image.png" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Lalezar&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Lalezar&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -68,7 +74,7 @@
                     <br>
                 </div>
                 <div>
-                    <p>يتشرف السيد محمد  عدنان
+                    <p>يتشرف السيد محمد عدنان
                         <br>
                         والسيد علي احمد
                         <br>
@@ -84,11 +90,12 @@
                 </div>
                 <div>
                     <p> <img width="35px" src="https://cdn-icons-png.flaticon.com/128/6654/6654165.png" alt="">
-  
+
                         <br>
                         كريمته
                         <!-- <br> -->
-                         ندى احمد</p>
+                        ندى احمد
+                    </p>
                 </div>
                 <div>
                     <br>
@@ -234,21 +241,21 @@
         </div>
     </div>
     <button id="musicToggleBtn" class="music-toggle-btn" onclick="toggleMusic()" aria-label="تغيير الصوت">
-    <i class="bi bi-music-note-beamed" id="musicIcon"></i>
-</button>
+        <i class="bi bi-music-note-beamed" id="musicIcon"></i>
+    </button>
     <!-- عنصر الصوت للموسيقى الخلفية -->
-<!-- فيديو يوتيوب مخفي يعمل كموسيقى خلفية -->
-<div style="display: none;">
-    <iframe id="youtubeAudio"
-            src="https://www.youtube.com/embed/qNvJnYLaT5s?enablejsapi=1&autoplay=0&loop=1&playlist=qNvJnYLaT5s" 
+    <!-- فيديو يوتيوب مخفي يعمل كموسيقى خلفية -->
+    <div style="display: none;">
+        <iframe id="youtubeAudio"
+            src="https://www.youtube.com/embed/qNvJnYLaT5s?enablejsapi=1&autoplay=0&loop=1&playlist=qNvJnYLaT5s"
             allow="autoplay">
-    </iframe>
-</div>
+        </iframe>
+    </div>
 
-<!-- زر التحكم بالصوت (تشغيل / إيقاف) ثابت أعلى الشاشة -->
-<button id="musicToggleBtn" class="music-toggle-btn" onclick="toggleMusic()" aria-label="تحكم بالموسيقى">
-    <i id="musicIcon" class="bi bi-music-note-beamed"></i>
-</button>
+    <!-- زر التحكم بالصوت (تشغيل / إيقاف) ثابت أعلى الشاشة -->
+    <button id="musicToggleBtn" class="music-toggle-btn" onclick="toggleMusic()" aria-label="تحكم بالموسيقى">
+        <i id="musicIcon" class="bi bi-music-note-beamed"></i>
+    </button>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -256,57 +263,57 @@
 <!-- Firebase SDKs -->
 <script>
     // دالة تشغيل / إيقاف الموسيقى عند الضغط على الزر
-// متغير لمتابعة حالة الموسيقى (تشغيل أم إيقاف)
-let isMusicPlaying = false;
+    // متغير لمتابعة حالة الموسيقى (تشغيل أم إيقاف)
+    let isMusicPlaying = false;
 
-// دالة الدخول من شاشة الترحيب وتعديل التشغيل
-function enterInvitation() {
-    const welcomeOverlay = document.getElementById('welcome-overlay');
-    if (welcomeOverlay) {
-        welcomeOverlay.classList.add('fade-out');
-        document.body.classList.remove('no-scroll');
+    // دالة الدخول من شاشة الترحيب وتعديل التشغيل
+    function enterInvitation() {
+        const welcomeOverlay = document.getElementById('welcome-overlay');
+        if (welcomeOverlay) {
+            welcomeOverlay.classList.add('fade-out');
+            document.body.classList.remove('no-scroll');
 
-        // تشغيل فيديو خلفية الصفحة
-        const video = document.querySelector('.slide-1 video');
-        if (video) {
-            video.play().catch(err => console.log(err));
+            // تشغيل فيديو خلفية الصفحة
+            const video = document.querySelector('.slide-1 video');
+            if (video) {
+                video.play().catch(err => console.log(err));
+            }
+
+            // تشغيل أغنية يوتيوب تلقائياً عند الدخول
+            playYouTubeAudio();
         }
-
-        // تشغيل أغنية يوتيوب تلقائياً عند الدخول
-        playYouTubeAudio();
     }
-}
 
-// دالة تشغيل الأغنية من يوتيوب
-function playYouTubeAudio() {
-    const ytIframe = document.getElementById('youtubeAudio');
-    const icon = document.getElementById('musicIcon');
-    if (ytIframe) {
-        ytIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        isMusicPlaying = true;
-        if (icon) icon.className = 'bi bi-music-note-beamed';
+    // دالة تشغيل الأغنية من يوتيوب
+    function playYouTubeAudio() {
+        const ytIframe = document.getElementById('youtubeAudio');
+        const icon = document.getElementById('musicIcon');
+        if (ytIframe) {
+            ytIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            isMusicPlaying = true;
+            if (icon) icon.className = 'bi bi-music-note-beamed';
+        }
     }
-}
 
-// دالة إيقاف الأغنية مؤقتاً
-function pauseYouTubeAudio() {
-    const ytIframe = document.getElementById('youtubeAudio');
-    const icon = document.getElementById('musicIcon');
-    if (ytIframe) {
-        ytIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        isMusicPlaying = false;
-        if (icon) icon.className = 'bi bi-volume-mute-fill';
+    // دالة إيقاف الأغنية مؤقتاً
+    function pauseYouTubeAudio() {
+        const ytIframe = document.getElementById('youtubeAudio');
+        const icon = document.getElementById('musicIcon');
+        if (ytIframe) {
+            ytIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            isMusicPlaying = false;
+            if (icon) icon.className = 'bi bi-volume-mute-fill';
+        }
     }
-}
 
-// دالة التحكم التفاعلية للزر (تشغيل / إيقاف)
-function toggleMusic() {
-    if (isMusicPlaying) {
-        pauseYouTubeAudio();
-    } else {
-        playYouTubeAudio();
+    // دالة التحكم التفاعلية للزر (تشغيل / إيقاف)
+    function toggleMusic() {
+        if (isMusicPlaying) {
+            pauseYouTubeAudio();
+        } else {
+            playYouTubeAudio();
+        }
     }
-}
     // تحديد التاريخ المستهدف (10 أكتوبر من السنة الحالية أو القادمة)
     const targetDate = new Date("October 10, 2026 00:00:00").getTime();
 
