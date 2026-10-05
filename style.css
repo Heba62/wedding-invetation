@@ -4,10 +4,10 @@
   padding: 0;
 }
 
-body {
+body , .welcome-overlay{
   direction: rtl;
   font-family: "Aref Ruqaa", serif;
-  background-color: #f4f1ea;
+  /* background-color: #f4f1ea; */
 }
 
 .wedding {
@@ -497,14 +497,34 @@ iframe {
 }
 
 /* منع التمرير والـ Scroll عند فتح شاشة الترحيب */
-/* body.no-scroll {
+body.no-scroll {
     overflow: hidden !important;
     height: 100vh !important;
-} */
+}
 
 
-    /* position: absolute;
-    right: -37px;
-    bottom: 0;
-    width: 63%;
-    z-index: -1; */
+.music-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    z-index: 1000;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(253, 252, 247, 0.9);
+    border: 1px solid #4a422c;
+    color: #4a422c;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+    transform: scale(1.1);
+    background: #ffffff;
+}
