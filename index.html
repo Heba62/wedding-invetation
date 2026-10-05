@@ -16,16 +16,16 @@
 
 <body class="no-scroll">
     <!-- صفحة الترحيب الأوليّة -->
-    <div id="welcome-overlay" class="welcome-overlay">
+    <!-- <div id="welcome-overlay" class="welcome-overlay">
         <div class="welcome-circle" onclick="enterInvitation()">
             <div class="welcome-text">
-                <h2>آل السيلاوي</h2>
+                <h2>آل عدنان</h2>
                 <span>&</span>
-                <h2>آل سلام</h2>
+                <h2>آل احمد</h2>
             </div>
             <p class="click-hint">اضغط للدخول إلى الدعوة</p>
         </div>
-    </div>
+    </div> -->
     <div class="wedding">
         <div class="slide-1">
             <div class="video">
@@ -35,9 +35,9 @@
             </div>
             <div class="content">
                 <div class="familyName">
-                    <p>ال السيلاوي</p>
+                    <p>ال عدنان</p>
                     <p>&</p>
-                    <p>ال سلام</p>
+                    <p>ال احمد</p>
                 </div>
                 <div class="timeWedding">
                     <div>
@@ -54,34 +54,48 @@
             </div>
         </div>
         <div class="slide-2">
+            <!-- <img src="https://banner2.cleanpng.com/cb4/vxf/xlw/vus622s5e.webp" alt=""> -->
             <div class="contain">
+                <!-- <div>
+                                <img src="./249bbcc213a8686a77b799057a9bce-removebg-preview.png" alt="" srcset="">
+
+                </div> -->
                 <div>
                     <p>
                         ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
                         وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ﴾
                     </p>
+                    <br>
                 </div>
                 <div>
-                    <p>يتشرف السيد خالد ابودياك</p>
-                    <p>والسيد علي سلام </p>
+                    <p>يتشرف السيد محمد  عدنان
+                        <br>
+                        والسيد علي احمد
+                        <br>
+                    </p>
                 </div>
                 <div>
+                    <br>
                     <p>بدعوتكم لمشاركة فرحة زفاف</p>
+                    <!-- <br> -->
                 </div>
                 <div>
-                    <p>نجله</p>
-                    <p>المهندس عيسى سلام</p>
+                    <p>نجله امير عدنان</p>
                 </div>
                 <div>
-                    <p>على</p>
-                    <p>كريمته</p>
-                    <p>رنا السيلاوي</p>
+                    <p> <img width="35px" src="https://cdn-icons-png.flaticon.com/128/6654/6654165.png" alt="">
+  
+                        <br>
+                        كريمته
+                        <!-- <br> -->
+                         ندى احمد</p>
                 </div>
                 <div>
+                    <br>
                     <p>ويسعدنا حضوركم</p>
                 </div>
                 <div>
-                    <p>ال السيلاوي & وال سلام</p>
+                    <p>ال عدنان & وال احمد</p>
                 </div>
             </div>
         </div>
@@ -211,7 +225,7 @@
         </div>
         <div class="slide-7">
             <hr>
-            <p>ال السيلاوي & ال سلام
+            <p>ال عدنان & ال احمد
                 <br>
                 10.10.2026
                 <br>
@@ -225,22 +239,22 @@
     crossorigin="anonymous"></script>
 <!-- Firebase SDKs -->
 <script>
-    function enterInvitation() {
-        const welcomeOverlay = document.getElementById('welcome-overlay');
-        if (welcomeOverlay) {
-            // إخفاء شاشة الترحيب
-            welcomeOverlay.classList.add('fade-out');
+    // function enterInvitation() {
+    //     const welcomeOverlay = document.getElementById('welcome-overlay');
+    //     if (welcomeOverlay) {
+    //         // إخفاء شاشة الترحيب
+    //         welcomeOverlay.classList.add('fade-out');
 
-            // إزالة قفل التمرير والسماح بالـ Scroll داخل الدعوة
-            document.body.classList.remove('no-scroll');
+    //         // إزالة قفل التمرير والسماح بالـ Scroll داخل الدعوة
+    //         document.body.classList.remove('no-scroll');
 
-            // تشغيل فيديو الخلفية تلقائياً
-            const video = document.querySelector('.slide-1 video');
-            if (video) {
-                video.play().catch(err => console.log(err));
-            }
-        }
-    }
+    //         // تشغيل فيديو الخلفية تلقائياً
+    //         const video = document.querySelector('.slide-1 video');
+    //         if (video) {
+    //             video.play().catch(err => console.log(err));
+    //         }
+    //     }
+    // }
     // تحديد التاريخ المستهدف (10 أكتوبر من السنة الحالية أو القادمة)
     const targetDate = new Date("October 10, 2026 00:00:00").getTime();
 
