@@ -279,15 +279,19 @@
 <!-- Firebase SDKs -->
 <script>
     // دالة تشغيل / إيقاف الموسيقى عند الضغط على الزر
-    // متغير لمتابعة حالة الموسيقى (تشغيل أم إيقاف)
     let isMusicPlaying = false;
 
-    // دالة الدخول من شاشة الترحيب وتعديل التشغيل
+    // دالة الدخول الشاملة (تدمج الموسيقى وإخفاء شاشة الترحيب والتمرير)
     function enterInvitation() {
         const welcomeOverlay = document.getElementById('welcome-overlay');
         if (welcomeOverlay) {
             welcomeOverlay.classList.add('fade-out');
             document.body.classList.remove('no-scroll');
+
+            // إخفاء الـ overlay تماماً بعد انتهاء تأثير الاختفاء (اختياري)
+            setTimeout(() => {
+                welcomeOverlay.style.display = 'none';
+            }, 500);
 
             // تشغيل فيديو خلفية الصفحة
             const video = document.querySelector('.slide-1 video');
@@ -298,6 +302,11 @@
             // تشغيل أغنية يوتيوب تلقائياً عند الدخول
             playYouTubeAudio();
         }
+
+        // تشغيل التمرير المستمر السلس بعد مهلة قصيرة لتستقر الصفحة
+        setTimeout(() => {
+            startAutoScroll();
+        }, 800);
     }
 
     // دالة تشغيل الأغنية من يوتيوب
@@ -330,31 +339,75 @@
             playYouTubeAudio();
         }
     }
-    // تحديد التاريخ المستهدف (10 أكتوبر من السنة الحالية أو القادمة)
+
+    // عداد الوقت التنازلي
     const targetDate = new Date("October 10, 2026 00:00:00").getTime();
 
     const countdown = setInterval(function () {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        // حساب الأيام، الساعات، الدقائق، والثواني
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // عرض النتائج داخل العناصر في الـ HTML
         document.getElementById("days").innerText = days < 10 ? "0" + days : days;
         document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
         document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
         document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
 
-        // إذا انتهى الوقت
         if (distance < 0) {
             clearInterval(countdown);
             document.querySelector(".countdown-container").innerHTML = "<h3>لقد وصل الموعد المنشود!</h3>";
         }
     }, 1000);
+
+    // إعدادات التمرير التلقائي السلس
+    let animationFrameId = null;
+    let isAutoScrolling = false;
+    let scrollSpeed = 2; // يمكنك التحكم بالسرعة هنا (زودها أو قللها حسب رغبتك)
+
+    function step() {
+        if (!isAutoScrolling) return;
+
+        window.scrollBy(0, scrollSpeed);
+
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+            stopAutoScroll();
+            return;
+        }
+
+        animationFrameId = requestAnimationFrame(step);
+    }
+
+    function startAutoScroll() {
+        if (isAutoScrolling) return;
+        isAutoScrolling = true;
+        step();
+    }
+
+    function stopAutoScroll() {
+        if (isAutoScrolling) {
+            isAutoScrolling = false;
+            cancelAnimationFrame(animationFrameId);
+        }
+    }
+
+    // إيقاف التمرير التلقائي فوراً إذا تدخل المستخدم
+    window.addEventListener('wheel', () => {
+        stopAutoScroll();
+    }, { passive: true });
+
+    window.addEventListener('touchstart', () => {
+        stopAutoScroll();
+    }, { passive: true });
+
+    window.addEventListener('keydown', (e) => {
+        if (['ArrowDown', 'ArrowUp', 'Space', 'PageDown', 'PageUp'].includes(e.code)) {
+            stopAutoScroll();
+        }
+    });
 </script>
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
